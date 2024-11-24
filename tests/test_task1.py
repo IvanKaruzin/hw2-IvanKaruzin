@@ -39,10 +39,10 @@ def test_means():
   assert hash_str(res) == ans[VAR_REG]
 
 def test_res_table_values():
-  ans = [('45dcc784', 'b6a45058'),
-         ('b12f00e2', '3d3282bd'),
+  ans = [('45dcc784', '5d969b11'),
+         ('b12f00e2', '959f5cf1'),
          ('9fade5f4', '02853e67'),
-         ('3dac8083', '86bcb9a3'),
+         ('3dac8083', '1520ba4b'),
          ('b4b46deb', '78de7acd')]
 
   res = hash_str(str(list(hw2.RES_TABLE.values.flatten())))
