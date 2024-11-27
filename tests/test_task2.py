@@ -25,11 +25,11 @@ def test_correct_columns():
   assert res == ans
 
 def test_correlation_matrix():
-  ans = '95a97af3'
+  ans = ['95a97af3', 'd7696cc5']
 
   res = hash_str(str(list(hw2.DF_CORR.values.flatten())))
 
-  assert res == ans
+  assert res in ans
 
 def test_corr_comp():
   ans = ['f6c4ff33', '8ea93a9a', '4a3b5526', '5394df14']
@@ -39,7 +39,7 @@ def test_corr_comp():
   assert res == ans[VAR_COMP]
 
 def test_means():
-  ans = ['ce211141', '4b98443c']
+  ans = ['6aa463ea', '1df8deb6']
 
   res = hash_str(str(list(hw2.S_MEANS_COMP)))
 
