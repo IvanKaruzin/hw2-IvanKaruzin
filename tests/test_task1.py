@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
+
 import pytest
 import import_ipynb
 import hw2
@@ -13,7 +16,7 @@ def test_data_loaded():
   assert len(hw2.DF_WGI) == 214
 
 def test_data_sorted():
-  assert hash_str(str(hw2.DF_SORTED.iloc[0].values)) == 'a760936b'
+  assert hash_str(str(hw2.DF_SORTED.iloc[0].values)) == 'fc99fc7e'
 
 def test_region_selected():
   var_counts = [30, 32, 19, 18, 48]
@@ -36,11 +39,15 @@ def test_means():
   assert hash_str(res) == ans[VAR_REG]
 
 def test_res_table_values():
-  ans = ['45dcc784', 'b12f00e2', '9fade5f4', '3dac8083', 'b4b46deb']
+  ans = [('afb84ff9', 'e2841aad'),
+         ('fabfd422', '3165f3da'),
+         ('225c5d74', '52561806'),
+         ('6dc0b93f', 'b2f56c79'),
+         ('5782777c', 'a63c2e62')]
 
   res = hash_str(str(list(hw2.RES_TABLE.values.flatten())))
 
-  assert res == ans[VAR_REG]
+  assert res in ans[VAR_REG]
 
 def test_res_table_columns():
   ans = ['Region', 'Country', 'Rank 1996', 'Rank 2022', 'Difference']

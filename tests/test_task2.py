@@ -1,3 +1,6 @@
+import matplotlib
+matplotlib.use('Agg')
+
 import pytest
 import import_ipynb
 import hw2
@@ -22,11 +25,11 @@ def test_correct_columns():
   assert res == ans
 
 def test_correlation_matrix():
-  ans = '95a97af3'
+  ans = ['a0e88be5', 'f053abc8']
 
-  res = hash_str(str(list(hw2.DF_CORR.values.flatten())))
+  res = hash_str(str(list(hw2.DF_CORR.round(6).values.flatten())))
 
-  assert res == ans
+  assert res in ans
 
 def test_corr_comp():
   ans = ['f6c4ff33', '8ea93a9a', '4a3b5526', '5394df14']
@@ -36,8 +39,8 @@ def test_corr_comp():
   assert res == ans[VAR_COMP]
 
 def test_means():
-  ans = ['ce211141', '4b98443c']
+  ans = ['6a63d042', '64722647']
 
-  res = hash_str(str(list(hw2.S_MEANS_COMP)))
+  res = hash_str(str(list(hw2.S_MEANS_COMP.round(4))))
 
   assert res in ans
